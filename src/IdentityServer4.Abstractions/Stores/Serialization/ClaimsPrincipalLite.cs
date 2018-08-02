@@ -1,16 +1,13 @@
 ﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
-
-
 #pragma warning disable 1591
 
-namespace IdentityServer4.Validation
+namespace IdentityServer4.Stores.Serialization
 {
-    public enum BearerTokenUsageType
+    public class ClaimsPrincipalLite
     {
-        AuthorizationHeader = 0,
-        PostBody = 1,
-        QueryString = 2
+        public string AuthenticationType { get; set; }
+        public ClaimLite[] Claims { get; set; }
     }
 }
