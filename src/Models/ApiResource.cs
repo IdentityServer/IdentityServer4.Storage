@@ -84,18 +84,5 @@ namespace IdentityServer4.Models
         /// An API must have at least one scope. Each scope can have different settings.
         /// </summary>
         public ICollection<Scope> Scopes { get; set; } = new HashSet<Scope>();
-
-        internal ApiResource CloneWithScopes(IEnumerable<Scope> scopes)
-        {
-            return new ApiResource
-            {
-                Enabled = Enabled,
-                Name = Name,
-                DisplayName = DisplayName,
-                ApiSecrets = ApiSecrets,
-                Scopes = new HashSet<Scope>(scopes.ToArray()),
-                UserClaims = UserClaims
-            };
-        }
     }
 }
