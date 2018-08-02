@@ -1,4 +1,4 @@
-﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
+// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
@@ -37,5 +37,13 @@ namespace IdentityServer4.Models
         /// List of accociated user claims that should be included when this resource is requested.
         /// </summary>
         public ICollection<string> UserClaims { get; set; } = new HashSet<string>();
+
+        /// <summary>
+        /// Gets or sets the custom properties for the resource.
+        /// </summary>
+        /// <value>
+        /// The properties.
+        /// </value>
+        public IDictionary<string, string> Properties { get; set; } = new Dictionary<string, string>();
     }
 }
