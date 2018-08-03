@@ -55,6 +55,11 @@ namespace IdentityServer4.Models
         public string ClientName { get; set; }
 
         /// <summary>
+        /// Description of the client.
+        /// </summary>
+        public string Description { get; set; }
+
+        /// <summary>
         /// URI to further information about client (used on consent screen)
         /// </summary>
         public string ClientUri { get; set; }
