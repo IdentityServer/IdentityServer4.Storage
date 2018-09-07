@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <VersionPrefix>2.3.0</VersionPrefix>
-    <VersionSuffix>preview1</VersionSuffix>
+    <VersionSuffix>preview1-update1</VersionSuffix>
 
     <PackageId>IdentityServer4.Storage</PackageId>
     <Description>Storage interfaces and models for IdentityServer4</Description>
