@@ -270,6 +270,16 @@ namespace IdentityServer4.Models
         public int? UserSsoLifetime { get; set; }
 
         /// <summary>
+        /// The user code type for device flow.
+        /// </summary>
+        public string UserCodeType { get; set; }
+
+        /// <summary>
+        /// The code lifetime (in seconds) for device flow.
+        /// </summary>
+        public int DeviceCodeLifetime { get; set; } = 300;
+
+        /// <summary>
         /// Gets or sets the allowed CORS origins for JavaScript clients.
         /// </summary>
         /// <value>
