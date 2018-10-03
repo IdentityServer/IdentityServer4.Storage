@@ -270,13 +270,19 @@ namespace IdentityServer4.Models
         public int? UserSsoLifetime { get; set; }
 
         /// <summary>
-        /// The user code type for device flow.
+        /// Gets or sets the type of the device flow user code.
         /// </summary>
+        /// <value>
+        /// The type of the device flow user code.
+        /// </value>
         public string UserCodeType { get; set; }
 
         /// <summary>
-        /// The code lifetime (in seconds) for device flow.
+        /// Gets or sets the device code lifetime.
         /// </summary>
+        /// <value>
+        /// The device code lifetime.
+        /// </value>
         public int DeviceCodeLifetime { get; set; } = 300;
 
         /// <summary>
@@ -294,22 +300,6 @@ namespace IdentityServer4.Models
         /// The properties.
         /// </value>
         public IDictionary<string, string> Properties { get; set; } = new Dictionary<string, string>();
-
-        /// <summary>
-        /// Gets or sets the type of the device flow user code.
-        /// </summary>
-        /// <value>
-        /// The type of the device flow user code.
-        /// </value>
-        public string UserCodeType { get; set; }
-
-        /// <summary>
-        /// Gets or sets the device code lifetime.
-        /// </summary>
-        /// <value>
-        /// The device code lifetime.
-        /// </value>
-        public int DeviceCodeLifetime { get; set; } = 300;
 
         /// <summary>
         /// Validates the grant types.
