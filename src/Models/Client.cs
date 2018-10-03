@@ -265,6 +265,11 @@ namespace IdentityServer4.Models
         public string PairWiseSubjectSalt { get; set; }
 
         /// <summary>
+        /// The maximum duration (in seconds) since the last time the user authenticated.
+        /// </summary>
+        public int? UserSsoLifetime { get; set; }
+
+        /// <summary>
         /// Gets or sets the allowed CORS origins for JavaScript clients.
         /// </summary>
         /// <value>
