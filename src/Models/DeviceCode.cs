@@ -8,6 +8,9 @@ using System.Security.Claims;
 
 namespace IdentityServer4.Models
 {
+    /// <summary>
+    /// Represents data needed for device flow.
+    /// </summary>
     public class DeviceCode
     {
         /// <summary>
