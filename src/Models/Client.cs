@@ -15,11 +15,13 @@ namespace IdentityServer4.Models
     /// <summary>
     /// Models an OpenID Connect or OAuth2 client
     /// </summary>
-    [DebuggerDisplay("{ClientId}")]
+    [DebuggerDisplay("{DebuggerDisplay,nq}")]
     public class Client
     {
         // setting grant types should be atomic
         private ICollection<string> _allowedGrantTypes = new GrantTypeValidatingHashSet();
+
+        private string DebuggerDisplay => ClientId ?? $"{{{typeof(Client)}}}";
 
         /// <summary>
         /// Specifies if client is enabled (defaults to <c>true</c>)
@@ -63,7 +65,7 @@ namespace IdentityServer4.Models
         /// URI to further information about client (used on consent screen)
         /// </summary>
         public string ClientUri { get; set; }
-        
+
         /// <summary>
         /// URI to client logo (used on consent screen)
         /// </summary>
@@ -130,7 +132,7 @@ namespace IdentityServer4.Models
         /// Specifies is the user's session id should be sent to the FrontChannelLogoutUri. Defaults to <c>true</c>.
         /// </summary>
         public bool FrontChannelLogoutSessionRequired { get; set; } = true;
-        
+
         /// <summary>
         /// Specifies logout URI at client for HTTP back-channel based logout.
         /// </summary>
@@ -336,11 +338,11 @@ namespace IdentityServer4.Models
             {
                 throw new InvalidOperationException("Grant types list contains duplicate values");
             }
-            
+
             // would allow response_type downgrade attack from code to token
             DisallowGrantTypeCombination(GrantType.Implicit, GrantType.AuthorizationCode, grantTypes);
             DisallowGrantTypeCombination(GrantType.Implicit, GrantType.Hybrid, grantTypes);
-            
+
             DisallowGrantTypeCombination(GrantType.AuthorizationCode, GrantType.Hybrid, grantTypes);
         }
 

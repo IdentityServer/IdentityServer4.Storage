@@ -10,9 +10,11 @@ namespace IdentityServer4.Models
     /// <summary>
     /// Models the common data of API and identity resources.
     /// </summary>
-    [DebuggerDisplay("{Name}")]
+    [DebuggerDisplay("{DebuggerDisplay,nq}")]
     public abstract class Resource
     {
+        private string DebuggerDisplay => Name ?? $"{{{typeof(Resource)}}}";
+
         /// <summary>
         /// Indicates if this resource is enabled. Defaults to true.
         /// </summary>
