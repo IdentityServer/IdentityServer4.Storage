@@ -1,4 +1,4 @@
-﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
+// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
@@ -24,7 +24,7 @@ namespace IdentityServer4.Stores.Serialization
             var source = serializer.Deserialize<ClaimsPrincipalLite>(reader);
             if (source == null) return null;
 
-            var claims = source.Claims.Select(x => new Claim(x.Type, x.Value));
+            var claims = source.Claims.Select(x => new Claim(x.Type, x.Value, x.ValueType));
             var id = new ClaimsIdentity(claims, source.AuthenticationType, JwtClaimTypes.Name, JwtClaimTypes.Role);
             var target = new ClaimsPrincipal(id);
             return target;
@@ -37,7 +37,7 @@ namespace IdentityServer4.Stores.Serialization
             var target = new ClaimsPrincipalLite
             {
                 AuthenticationType = source.Identity.AuthenticationType,
-                Claims = source.Claims.Select(x => new ClaimLite { Type = x.Type, Value = x.Value }).ToArray()
+                Claims = source.Claims.Select(x => new ClaimLite { Type = x.Type, Value = x.Value, ValueType = x.ValueType }).ToArray()
             };
             serializer.Serialize(writer, target);
         }
