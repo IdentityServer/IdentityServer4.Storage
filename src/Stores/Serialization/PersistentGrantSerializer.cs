@@ -12,12 +12,9 @@ namespace IdentityServer4.Stores.Serialization
     /// <seealso cref="IdentityServer4.Stores.Serialization.IPersistentGrantSerializer" />
     public class PersistentGrantSerializer : IPersistentGrantSerializer
     {
-        private readonly JsonSerializerSettings _settings;
+        private static readonly JsonSerializerSettings _settings;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PersistentGrantSerializer"/> class.
-        /// </summary>
-        public PersistentGrantSerializer()
+        static PersistentGrantSerializer()
         {
             _settings = new JsonSerializerSettings
             {
