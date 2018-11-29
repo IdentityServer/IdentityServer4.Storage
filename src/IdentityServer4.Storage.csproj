@@ -10,7 +10,8 @@
     <PackageTags>OAuth2;OAuth 2.0;OpenID Connect;Security;Identity;IdentityServer</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/IdentityServer/Artwork/master/Logos/IDserver_icon128.jpg</PackageIconUrl>
     <PackageProjectUrl>https://github.com/IdentityServer/IdentityServer4.Storage</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/IdentityServer/IdentityServer4.Storage/blob/release/LICENSE</PackageLicenseUrl>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageReleaseNotes>https://github.com/IdentityServer/IdentityServer4/releases</PackageReleaseNotes>
 
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
